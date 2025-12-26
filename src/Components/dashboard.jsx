@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../api/axios";
-import "../styles/dashboard.css";
+import "../Styles/dashboard.css";
 
 axios.defaults.withCredentials = true;   
 
