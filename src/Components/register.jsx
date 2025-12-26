@@ -49,7 +49,7 @@ const Register = () => {
           </div>
 
           <p className="login-text">
-            Already have an account? <Link to="/" className="login-link">Login</Link>
+            Already have an account? <Link to="/login" className="login-link">Login</Link>
           </p>
         </div>
 

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../api/axios";
 import "../Styles/dashboard.css";
-
-axios.defaults.withCredentials = true;   
+ 
 
 const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
