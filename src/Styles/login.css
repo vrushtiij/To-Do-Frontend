@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.login-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: radial-gradient(circle at top, #5fb4ff, #1f6ed5); */
+  background-image: url("../assets/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.login-card {
+  width: 850px;
+  height: 480px;
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.6s ease-in forwards;
+}
+
+.login-left {
+  width: 45%;
+  background: linear-gradient(135deg, #3aa0ff, #1f6ed5);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.cloud {
+  font-size: 34px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.social-icons svg {
+  cursor: pointer;
+}
+
+.register-text {
+  font-size: 14px;
+}
+
+.register-text span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.register-link {
+    color: white;
+}
+
+.login-right {
+  width: 55%;
+  padding: 50px;
+}
+
+.login-right h2 {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.login-right h2 span {
+  color: #1f6ed5;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 30px;
+}
+
+.login-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-right input {
+  color: black;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+
+.login-right button {
+  margin-top: 15px;
+  background: #1f6ed5;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-right button:hover {
+  background: #155bb5;
+}
+
+.forgot {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #1f6ed5;
+  cursor: pointer;
+  text-align: center;
+}
