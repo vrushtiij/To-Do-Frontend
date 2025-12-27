@@ -8,6 +8,11 @@ const Dashboard = () => {
   const [taskInput, setTaskInput] = useState("");
   const [statusInput, setStatusInput] = useState("");
   const [editingTaskId, setEditingTaskId] = useState(null);
+  const options = [
+    { value: 'pending', label: 'Pending' },
+    { value: 'in progress', label: 'In Progress' },
+    { value: 'completed', label: 'Completed' },
+  ]
 
   useEffect(() => {
     fetchTasks();
@@ -56,6 +61,7 @@ const Dashboard = () => {
     setEditingTaskId(task._id);
   };
 
+
   const handleDelete = async (id) => {
     try {
       await api.delete(`/todos/${id}`);
@@ -87,12 +93,14 @@ const Dashboard = () => {
             onChange={(e) => setTaskInput(e.target.value)}
           />
 
-          <input
-            type="text"
-            placeholder="Status (pending/completed/in progress)"
-            value={statusInput}
-            onChange={(e) => setStatusInput(e.target.value)}
-          />
+          <select className="dropdown" value={statusInput} onChange={(e) => setStatusInput(e.target.value)}>
+            <option value="">-- Task Status --</option>
+            {options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
 
           <button onClick={handleAddOrUpdate}>
             {editingTaskId ? "Update" : "Add"}
@@ -102,7 +110,7 @@ const Dashboard = () => {
         <div className="task-wall">
           {tasks.map((task, index) => (
             <div
-              key={task.task_id}
+              key={task._id}
               className={`task-card color-${index % 5}`}
             >
               <p><b>Task:</b> {task.task}</p>
